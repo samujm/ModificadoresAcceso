@@ -65,17 +65,60 @@ package paquete1;
     
     /*NOTA!!!!!!!! La ClaseHija estaba en el paquete2, pero se movio al paquete1 ya que default solo funciona estando en el mismo paquete*/
     
-    class Clase1 {
-    //ATRIBUTO: 
-    String atributoDefault = "Valor atributo Default";
+//    class Clase1 {
+//    //ATRIBUTO: Desde el mismo paquete
+//    String atributoDefault = "Valor atributo Default";
+//    
+//    //CONSTRUCTOR: Desde el mismo paquete
+//    Clase1(){
+//        System.out.println("Constructor Default");
+//    }
+//
+//    //METODOS: Desde el mismo paquete
+//    void metodoDefault(){
+//        System.out.println("Metodo Default");
+//    }
+//  } 
+
+
+/*------------------------------------------------------------------------------- PRIVATE -----------------------------------------------------------------------------------------*/
+
+    /*Modificador de acceso PRIVATE*/
+    /*Aplica a:
+        CLASE-NO
+        VARIABLE-SI
+        MÉTODO-SI
+        CONSTRUCTOR-SI
+    */
     
-    //CONSTRUCTOR: 
-    Clase1(){
-        System.out.println("Constructor Default");
+    //Ya no se puede modificar su valor desde otra clase sin importar si es clase hija, si se encuentra en el mismo paquete o cualquier otro
+
+    class Clase1 {
+    //ATRIBUTO: Necesario crear su get y/o set publico
+    private String atributoPrivado = "Valor atributo Privado";
+    
+    //CONSTRUCTOR: Necesario crear constructor publico para acceder a esta clase
+    private Clase1(){
+        System.out.println("Constructor Privado");
+    }
+  
+    public Clase1(String argumento){
+        this();//Forma de pasar el constructor vacio privado
+        System.out.println("Constructor publico");
     }
 
     //METODOS: 
-    void metodoDefault(){
-        System.out.println("Metodo Default");
+    private void metodoPrivado(){
+        System.out.println("Metodo Privado");
     }
+
+    public String getAtributoPrivado() {
+        return atributoPrivado;
+    }
+
+    public void setAtributoPrivado(String atributoPrivado) {
+        this.atributoPrivado = atributoPrivado;
+    }
+    
+    
   } 
