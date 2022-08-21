@@ -36,21 +36,46 @@ package paquete1;
         CONSTRUCTOR-SI
     */
 
-public class Clase1 {
-    //ATRIBUTO: Acceder desde las clases padres e hijas y dentro del mismo paquete
-    protected String atributoProtected = "Valor atributo protected";
+//public class Clase1 {
+//    //ATRIBUTO: Acceder desde las clases padres e hijas y dentro del mismo paquete
+//    protected String atributoProtected = "Valor atributo protected";
+//    
+//    //CONSTRUCTOR: Desde el mismo paquete o desde la clase hija
+//    protected Clase1(){
+//        System.out.println("Constructor protected");
+//    }
+//    public Clase1(String arg){
+//        System.out.println("Constructor publico");
+//    }
+//    
+//    //METODOS: Desde el mismo paquete o desde la clase hija
+//    protected void metodoProtected(){
+//        System.out.println("Metodo protected");
+//    }
+//  } 
+    /*------------------------------------------------------------------------------- DEFAULT O PACKAGE -----------------------------------------------------------------------------------------*/
+
+    /*Modificador de acceso DEFAULT O PACKAGE*/
+    /*Aplica a:
+        CLASE-SI
+        VARIABLE-SI
+        MÉTODO-SI
+        CONSTRUCTOR-SI
+    */
+    
+    /*NOTA!!!!!!!! La ClaseHija estaba en el paquete2, pero se movio al paquete1 ya que default solo funciona estando en el mismo paquete*/
+    
+    class Clase1 {
+    //ATRIBUTO: 
+    String atributoDefault = "Valor atributo Default";
     
     //CONSTRUCTOR: 
-    protected Clase1(){
-        System.out.println("Constructor protected");
-    }
-    public Clase1(String arg){
-        System.out.println("Constructor publico");
-    }
-    
-    //METODOS: 
-    protected void metodoProtected(){
-        System.out.println("Metodo protected");
+    Clase1(){
+        System.out.println("Constructor Default");
     }
 
-}
+    //METODOS: 
+    void metodoDefault(){
+        System.out.println("Metodo Default");
+    }
+  } 
